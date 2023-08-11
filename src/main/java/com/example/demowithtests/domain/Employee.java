@@ -40,4 +40,17 @@ public final class Employee {
     @OneToOne  (cascade = CascadeType.ALL)
     @JoinColumn(name = "document_id", referencedColumnName = "id")
     private Document document;
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", country='" + country + '\'' +
+                ", email='" + email + '\'' +
+                ", addresses=" + addresses +
+                ", gender=" + gender +
+                ", document=" + document +
+                '}';
+    }
 }

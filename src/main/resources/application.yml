@@ -22,6 +22,9 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     #open-in-view: false
     #generate-ddl: true
+    properties:
+      hibernate:
+        generate_statistics: true
   flyway:
     #    locations: filesystem:.\src\main\resources\db\migration
     enabled: true
@@ -34,7 +37,8 @@ spring:
 # Logger configuration
 logging:
   pattern:
-    console: "%d %-5level %logger : %msg%n"
+    console: "%highlight{[%-5level]} %cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) %yellow([%t]) %magenta(%logger{36}) - %msg%n"
+
   level:
     org.springframework: info
     #org.hibernate: debug
